@@ -19,5 +19,3 @@ SHEET = GSPREAD_CLIENT.open('fuel_calculator')
 data = SHEET.worksheet('data')
 
 result = data.get_all_values()
-
-print(result)
