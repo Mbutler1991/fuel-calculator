@@ -17,5 +17,71 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('fuel_calculator')
 
 data = SHEET.worksheet('data')
+col_index = 1
+values_column =  data.col_values(col_index)
+print(values_column)
 
 result = data.get_all_values()
+
+def get_last_used_row(sheet, column):
+    values = sheet.col_values(column)
+    last_used_row = len(values) + 1 if values else 1
+    return last_used_row
+
+def fuel_price():
+    print('Please enter current fuel price')
+    fuel_price_input = input('Enter fuel price here:\n')
+
+    if 100.0 <= float(fuel_price_input) <= 290.0:
+        row = get_last_used_row(data, 1)
+        data.update_cell(row, 1, fuel_price_input)
+        print('Thank you!')
+    else:
+        raise ValueError("Invalid fuel price")
+
+def travel_distance():
+    print('Please enter the distance traveled in kilometers')
+    dist = input('Enter distance here:\n')
+
+    if 1 <= float(dist) <= 565:
+        row = get_last_used_row(data, 2)
+        data.update_cell(row, 2, dist)
+        print('Thank you!')
+    else:
+        raise ValueError("Invalid distance")
+
+def miles_per_gallon():
+    print('Please enter current MPG of your vehicle')
+    mpg = input('Enter MPG here:\n')
+
+    if 1 <= float(mpg) <= 565:
+        row = get_last_used_row(data, 3)
+        data.update_cell(row, 3, mpg)
+        print('Thank you!')
+        return mpg
+    else:
+        raise ValueError("Invalid MPG")
+    
+def calculate_cost(mpg, td, fp):
+    kml = float(mpg) / 2.3521458
+    print(kml)
+    litres_used = td / kml
+    cost_cents = litres_used * fp
+    cost_euro = cost_cents / 100
+    print(cost_euro)
+    row = get_last_used_row(data, 4)
+    data.update_cell(row, 4, mpg)
+
+def main():
+    fp = fuel_price()
+    td = travel_distance()
+    mpg = miles_per_gallon()
+    calculate_cost(mpg, td, fp)
+
+print('Welcome to the fuel price calculator')
+main()
+print('Thank you for choosing our fuel price calculator')
+
+print('Welcome to the fuel price calculator')
+main()
+print('Thank you for choosing our fuel price calculator')
