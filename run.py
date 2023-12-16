@@ -1,6 +1,7 @@
 import gspread
 import os
 from google.oauth2.service_account import Credentials
+from termcolor import colored
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,7 +20,6 @@ SHEET = GSPREAD_CLIENT.open('fuel_calculator')
 data = SHEET.worksheet('data')
 col_index = 1
 values_column =  data.col_values(col_index)
-print(values_column)
 
 result = data.get_all_values()
 
@@ -36,6 +36,7 @@ def fuel_price():
         row = get_last_used_row(data, 1)
         data.update_cell(row, 1, fuel_price_input)
         print('Thank you!')
+        return float(fuel_price_input)
     else:
         raise ValueError("Invalid fuel price")
 
@@ -46,7 +47,8 @@ def travel_distance():
     if 1 <= float(dist) <= 565:
         row = get_last_used_row(data, 2)
         data.update_cell(row, 2, dist)
-        print('Thank you!')
+        print(colored('Thank you!', 'red', attrs=['reverse', 'blink']))
+        return float(dist)
     else:
         raise ValueError("Invalid distance")
 
@@ -58,25 +60,28 @@ def miles_per_gallon():
         row = get_last_used_row(data, 3)
         data.update_cell(row, 3, mpg)
         print('Thank you!')
-        return mpg
+        return float(mpg)
     else:
         raise ValueError("Invalid MPG")
     
 def calculate_cost(mpg, td, fp):
     kml = float(mpg) / 2.3521458
-    print(kml)
     litres_used = td / kml
     cost_cents = litres_used * fp
     cost_euro = cost_cents / 100
-    print(cost_euro)
+    rounded_cost_euro = round(cost_euro, 2)
+    print(rounded_cost_euro)
     row = get_last_used_row(data, 4)
-    data.update_cell(row, 4, mpg)
+    data.update_cell(row, 4, rounded_cost_euro)
 
 def main():
-    fp = fuel_price()
-    td = travel_distance()
-    mpg = miles_per_gallon()
-    calculate_cost(mpg, td, fp)
+    try:
+        fp = fuel_price()
+        td = travel_distance()
+        mpg = miles_per_gallon()
+        calculate_cost(mpg, td, fp)
+    except ValueError as e:
+        print(f"Error: {e}")
 
 print('Welcome to the fuel price calculator')
 main()
