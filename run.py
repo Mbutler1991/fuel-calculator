@@ -29,37 +29,37 @@ def get_last_used_row(sheet, column):
     return last_used_row
 
 def fuel_price():
-    print(colored('Please enter current fuel price', 'red'))
+    print(colored('Please enter current fuel price', 'blue'))
     fuel_price_input = input('Enter fuel price here:\n')
 
     if 100.0 <= float(fuel_price_input) <= 290.0:
         row = get_last_used_row(data, 1)
         data.update_cell(row, 1, fuel_price_input)
-        print('Thank you!')
+        print(colored('Thank you!', 'green'))
         return float(fuel_price_input)
     else:
         raise ValueError("Invalid fuel price")
 
 def travel_distance():
-    print('Please enter the distance traveled in kilometers')
+    print(colored('Please enter the distance traveled in kilometers', 'blue'))
     dist = input('Enter distance here:\n')
 
     if 1 <= float(dist) <= 565:
         row = get_last_used_row(data, 2)
         data.update_cell(row, 2, dist)
-        print('Thank you')
+        print(colored('Thank you!', 'green'))
         return float(dist)
     else:
         raise ValueError("Invalid distance")
 
 def miles_per_gallon():
-    print('Please enter current MPG of your vehicle')
+    print(colored('Please enter current MPG of your vehicle', 'blue'))
     mpg = input('Enter MPG here:\n')
 
     if 1 <= float(mpg) <= 565:
         row = get_last_used_row(data, 3)
         data.update_cell(row, 3, mpg)
-        print('Thank you!')
+        print(colored('Thank you!', 'green'))
         return float(mpg)
     else:
         raise ValueError("Invalid MPG")
@@ -70,7 +70,7 @@ def calculate_cost(mpg, td, fp):
     cost_cents = litres_used * fp
     cost_euro = cost_cents / 100
     rounded_cost_euro = round(cost_euro, 2)
-    print(rounded_cost_euro)
+    print(colored(rounded_cost_euro, 'green', attrs=['reverse', 'bold']))
     row = get_last_used_row(data, 4)
     data.update_cell(row, 4, rounded_cost_euro)
 
@@ -81,12 +81,12 @@ def main():
         mpg = miles_per_gallon()
         calculate_cost(mpg, td, fp)
     except ValueError as e:
-        print(f"Error: {e}")
+        print(colored(f"Error: {e}", 'red', attrs=['bold']))
 
-print('Welcome to the fuel price calculator')
+print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
-print('Thank you for choosing our fuel price calculator')
+print(colored('Thank you for choosing our fuel price calculator', 'red', attrs=['reverse']))
 
-print('Welcome to the fuel price calculator')
+print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
-print('Thank you for choosing our fuel price calculator')
+print(colored('Thank you for choosing our fuel price calculator', 'red', attrs=['reverse']))
