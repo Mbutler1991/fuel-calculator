@@ -2,25 +2,26 @@ import os
 import gspread
 from google.oauth2.service_account import Credentials
 from termcolor import colored
+from tabulate import tabulate
+import pyfiglet
 
+# Scope for Google Sheets
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
-
+# Credentials/integrating with Google Sheets
 script_dir = os.path.dirname(os.path.realpath(__file__))
 creds_path = os.path.join(script_dir, 'creds.json')
 CREDS = Credentials.from_service_account_file(creds_path)
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('fuel_calculator')
-
 data = SHEET.worksheet('data')
 col_index = 1
 values_column =  data.col_values(col_index)
-
 result = data.get_all_values()
 
 def get_last_used_row(sheet, column):
@@ -31,75 +32,90 @@ def get_last_used_row(sheet, column):
     last_used_row = len(values) + 1 if values else 1
     return last_used_row
 
+def get_float_input(prompt, min_value, max_value):
+    '''
+    Function to ensure all data is in valid and no blank inputs
+    '''
+    while True:
+        try:
+            user_input = float(input(prompt))
+            if min_value <= user_input <= max_value:
+                return user_input
+            else:
+                raise ValueError(f"Invalid input. Please enter a value between {min_value} and {max_value}.")
+        except ValueError:
+            print("Invalid input. Please enter a valid number.")
+
 def fuel_price():
     '''
     Function to get the current fuel price as user input
     '''
     print(colored('Please enter current fuel price', 'blue'))
-    fuel_price_input = input('Enter fuel price here:\n')
-
-    if 100.0 <= float(fuel_price_input) <= 290.0:
-        row = get_last_used_row(data, 1)
-        data.update_cell(row, 1, fuel_price_input)
-        print(colored('Thank you!', 'green'))
-        return float(fuel_price_input)
-    else:
-        raise ValueError("Invalid fuel price")
+    fp_input = get_float_input('Enter fuel price here:\n', 100.0, 290.0)
+    row = get_last_used_row(data, 1)
+    data.update_cell(row, 1, fp_input)
+    print(colored('Thank you!', 'green'))
+    return fp_input
 
 def travel_distance():
     '''
     Function to get the distance traveled as user input
     '''
     print(colored('Please enter the distance traveled in kilometers', 'blue'))
-    dist = input('Enter distance here:\n')
-
-    if 1 <= float(dist) <= 565:
-        row = get_last_used_row(data, 2)
-        data.update_cell(row, 2, dist)
-        print(colored('Thank you!', 'green'))
-        return float(dist)
-    else:
-        raise ValueError("Invalid distance")
+    dist = get_float_input('Enter distance here:\n', 1, 2000)
+    row = get_last_used_row(data, 2)
+    data.update_cell(row, 2, dist)
+    print(colored('Thank you!', 'green'))
+    return dist
 
 def miles_per_gallon():
     '''
     Function to get the current MPG of the vehicle as user input
     '''
     print(colored('Please enter current MPG of your vehicle', 'blue'))
-    mpg = input('Enter MPG here:\n')
-
-    if 1 <= float(mpg) <= 565:
-        row = get_last_used_row(data, 3)
-        data.update_cell(row, 3, mpg)
-        print(colored('Thank you!', 'green'))
-        return float(mpg)
-    else:
-        raise ValueError("Invalid MPG")
+    mpg = get_float_input('Enter MPG here:\n', 1, 565)
+    row = get_last_used_row(data, 3)
+    data.update_cell(row, 3, mpg)
+    print(colored('Thank you!', 'green'))
+    return mpg
 
 def calculate_cost(mpg, td, fp):
     '''
-    Function to calculate the cost of the trip
+    Function to calculate the cost of the journey
     '''
     kml = float(mpg) / 2.3521458
     litres_used = td / kml
     cost_cents = litres_used * fp
     cost_euro = cost_cents / 100
     rounded_cost_euro = round(cost_euro, 2)
-    print(colored(rounded_cost_euro, 'green', attrs=['reverse', 'bold']))
+    print(colored('The estimated cost of your journey is:', 'blue'), colored(rounded_cost_euro, 'green', attrs=['reverse']))
     row = get_last_used_row(data, 4)
     data.update_cell(row, 4, rounded_cost_euro)
+
+def display_results():
+    """
+    Function to display summary of results for this journey
+    """
+    headers = ["Fuel Price", "Travel Distance", "MPG", "Estimated Cost"]
+    data_values = data.get_all_values()
+
+    journey = [next((value for value in reversed(col) if value.strip()), "") for col in zip(*data_values)]
+
+    table_data = [headers] + [journey]
+    table = tabulate(table_data, tablefmt="fancy_grid")
+
+    print(colored('Your Journey:', 'green', 'on_white', attrs=['underline']))
+    print(table)
 
 def main():
     '''
     main function to run the program
     '''
-    try:
-        fp = fuel_price()
-        td = travel_distance()
-        mpg = miles_per_gallon()
-        calculate_cost(mpg, td, fp)
-    except ValueError as e:
-        print(colored(f"Error: {e}", 'red', attrs=['bold']))
+    fp = fuel_price()
+    td = travel_distance()
+    mpg = miles_per_gallon()
+    calculate_cost(mpg, td, fp)
+    display_results()
 
 print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
