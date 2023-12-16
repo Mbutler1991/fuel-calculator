@@ -1,5 +1,5 @@
-import gspread
 import os
+import gspread
 from google.oauth2.service_account import Credentials
 from termcolor import colored
 
@@ -24,11 +24,17 @@ values_column =  data.col_values(col_index)
 result = data.get_all_values()
 
 def get_last_used_row(sheet, column):
+    '''
+    Function to get the last used row in a column
+    '''
     values = sheet.col_values(column)
     last_used_row = len(values) + 1 if values else 1
     return last_used_row
 
 def fuel_price():
+    '''
+    Function to get the current fuel price as user input
+    '''
     print(colored('Please enter current fuel price', 'blue'))
     fuel_price_input = input('Enter fuel price here:\n')
 
@@ -41,6 +47,9 @@ def fuel_price():
         raise ValueError("Invalid fuel price")
 
 def travel_distance():
+    '''
+    Function to get the distance traveled as user input
+    '''
     print(colored('Please enter the distance traveled in kilometers', 'blue'))
     dist = input('Enter distance here:\n')
 
@@ -53,6 +62,9 @@ def travel_distance():
         raise ValueError("Invalid distance")
 
 def miles_per_gallon():
+    '''
+    Function to get the current MPG of the vehicle as user input
+    '''
     print(colored('Please enter current MPG of your vehicle', 'blue'))
     mpg = input('Enter MPG here:\n')
 
@@ -63,8 +75,11 @@ def miles_per_gallon():
         return float(mpg)
     else:
         raise ValueError("Invalid MPG")
-    
+
 def calculate_cost(mpg, td, fp):
+    '''
+    Function to calculate the cost of the trip
+    '''
     kml = float(mpg) / 2.3521458
     litres_used = td / kml
     cost_cents = litres_used * fp
@@ -75,6 +90,9 @@ def calculate_cost(mpg, td, fp):
     data.update_cell(row, 4, rounded_cost_euro)
 
 def main():
+    '''
+    main function to run the program
+    '''
     try:
         fp = fuel_price()
         td = travel_distance()
