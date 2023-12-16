@@ -29,7 +29,7 @@ def get_last_used_row(sheet, column):
     return last_used_row
 
 def fuel_price():
-    print('Please enter current fuel price')
+    print(colored('Please enter current fuel price', 'red'))
     fuel_price_input = input('Enter fuel price here:\n')
 
     if 100.0 <= float(fuel_price_input) <= 290.0:
@@ -47,7 +47,7 @@ def travel_distance():
     if 1 <= float(dist) <= 565:
         row = get_last_used_row(data, 2)
         data.update_cell(row, 2, dist)
-        print(colored('Thank you!', 'red', attrs=['reverse', 'blink']))
+        print('Thank you')
         return float(dist)
     else:
         raise ValueError("Invalid distance")
