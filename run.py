@@ -130,6 +130,8 @@ def main():
     calculate_cost(mpg, td, fp)
     display_results()
 
+title = pyfiglet.figlet_format("Fuel Cost Calculator")
+print(title)
 print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
 print(colored('Thank you for choosing our fuel price calculator', 'red', attrs=['reverse']))
