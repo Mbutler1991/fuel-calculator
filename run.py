@@ -1,9 +1,14 @@
+'''
+Fuel Price Calculator
+
+This calculates journey cost using current fuel price, dustance travelled and MPG of vehicle used.
+'''
+
 import os
 import gspread
 from google.oauth2.service_account import Credentials
 from termcolor import colored
 from tabulate import tabulate
-import pyfiglet
 
 # Scope for Google Sheets
 SCOPE = [
@@ -20,8 +25,8 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('fuel_calculator')
 data = SHEET.worksheet('data')
-col_index = 1
-values_column =  data.col_values(col_index)
+COL_INDEX = 1
+values_column =  data.col_values(COL_INDEX)
 result = data.get_all_values()
 
 def get_last_used_row(sheet, column):
@@ -42,7 +47,9 @@ def get_float_input(prompt, min_value, max_value):
             if min_value <= user_input <= max_value:
                 return user_input
             else:
-                raise ValueError(f"Invalid input. Please enter a value between {min_value} and {max_value}.")
+                raise ValueError(
+                    f"Invalid input. Please enter a value between {min_value} and {max_value}."
+                    )
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -88,7 +95,10 @@ def calculate_cost(mpg, td, fp):
     cost_cents = litres_used * fp
     cost_euro = cost_cents / 100
     rounded_cost_euro = round(cost_euro, 2)
-    print(colored('The estimated cost of your journey is:', 'blue'), colored(rounded_cost_euro, 'green', attrs=['reverse']))
+    print(
+        colored('The estimated cost of your journey is:', 'blue'),
+        colored(rounded_cost_euro, 'green', attrs=['reverse'])
+        )
     row = get_last_used_row(data, 4)
     data.update_cell(row, 4, rounded_cost_euro)
 
@@ -99,7 +109,9 @@ def display_results():
     headers = ["Fuel Price", "Travel Distance", "MPG", "Estimated Cost"]
     data_values = data.get_all_values()
 
-    journey = [next((value for value in reversed(col) if value.strip()), "") for col in zip(*data_values)]
+    journey = [
+        next((value for value in reversed(col) if value.strip()), "") for col in zip(*data_values)
+        ]
 
     table_data = [headers] + [journey]
     table = tabulate(table_data, tablefmt="fancy_grid")
