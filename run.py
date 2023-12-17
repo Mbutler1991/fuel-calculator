@@ -1,7 +1,8 @@
 '''
 Fuel Price Calculator
 
-This calculates journey cost using current fuel price, dustance travelled and MPG of vehicle used.
+This calculates journey cost using current fuel price,
+distance travelled and MPG of vehicle used.
 '''
 
 import os
@@ -27,8 +28,9 @@ GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('fuel_calculator')
 data = SHEET.worksheet('data')
 COL_INDEX = 1
-values_column =  data.col_values(COL_INDEX)
+values_column = data.col_values(COL_INDEX)
 result = data.get_all_values()
+
 
 def get_last_used_row(sheet, column):
     '''
@@ -37,6 +39,7 @@ def get_last_used_row(sheet, column):
     values = sheet.col_values(column)
     last_used_row = len(values) + 1 if values else 1
     return last_used_row
+
 
 def get_float_input(prompt, min_value, max_value):
     '''
@@ -48,11 +51,10 @@ def get_float_input(prompt, min_value, max_value):
             if min_value <= user_input <= max_value:
                 return user_input
             else:
-                raise ValueError(
-                    f"Invalid input. Please enter a value between {min_value} and {max_value}."
-                    )
+                raise ValueError(f"Invalid input. Please enter a value between {min_value} and {max_value}.")
         except ValueError:
             print("Invalid input. Please enter a valid number.")
+
 
 def fuel_price():
     '''
@@ -65,6 +67,7 @@ def fuel_price():
     print(colored('Thank you!', 'green'))
     return fp_input
 
+
 def travel_distance():
     '''
     Function to get the distance traveled as user input
@@ -75,6 +78,7 @@ def travel_distance():
     data.update_cell(row, 2, dist)
     print(colored('Thank you!', 'green'))
     return dist
+
 
 def miles_per_gallon():
     '''
@@ -87,6 +91,7 @@ def miles_per_gallon():
     print(colored('Thank you!', 'green'))
     return mpg
 
+
 def calculate_cost(mpg, td, fp):
     '''
     Function to calculate the cost of the journey
@@ -96,12 +101,10 @@ def calculate_cost(mpg, td, fp):
     cost_cents = litres_used * fp
     cost_euro = cost_cents / 100
     rounded_cost_euro = round(cost_euro, 2)
-    print(
-        colored('The estimated cost of your journey is:', 'blue'),
-        colored(rounded_cost_euro, 'green', attrs=['reverse'])
-        )
+    print(colored('The estimated cost of your journey is:', 'blue'), colored(rounded_cost_euro, 'green', attrs=['reverse']))
     row = get_last_used_row(data, 4)
     data.update_cell(row, 4, rounded_cost_euro)
+
 
 def display_results():
     """
@@ -110,15 +113,14 @@ def display_results():
     headers = ["Fuel Price", "Travel Distance", "MPG", "Estimated Cost"]
     data_values = data.get_all_values()
 
-    journey = [
-        next((value for value in reversed(col) if value.strip()), "") for col in zip(*data_values)
-        ]
+    journey = [next((value for value in reversed(col) if value.strip()), "") for col in zip(*data_values)]
 
     table_data = [headers] + [journey]
     table = tabulate(table_data, tablefmt="fancy_grid")
 
     print(colored('Your Journey:', 'green', 'on_white', attrs=['underline']))
     print(table)
+
 
 def main():
     '''
@@ -134,8 +136,8 @@ title = pyfiglet.figlet_format("Fuel Cost Calculator")
 print(title)
 print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
-print(colored('Thank you for choosing our fuel price calculator', 'red', attrs=['reverse']))
+print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
 
 print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
-print(colored('Thank you for choosing our fuel price calculator', 'red', attrs=['reverse']))
+print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
