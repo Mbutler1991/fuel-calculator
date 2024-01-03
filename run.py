@@ -60,7 +60,8 @@ def fuel_price():
     '''
     Function to get the current fuel price as user input
     '''
-    print(colored('Please enter current fuel price', 'blue'))
+    print(colored('Please enter current fuel price in cents', 'blue'))
+    print(colored('For example 1 euro = 100', 'blue'))
     fp_input = get_float_input('Enter fuel price here:\n', 100.0, 290.0)
     row = get_last_used_row(data, 1)
     data.update_cell(row, 1, fp_input)
