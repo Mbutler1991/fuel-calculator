@@ -115,19 +115,19 @@ __Manual Testing__
 - Fuel Price input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
   
-  ![Invalid Fuel Price](assets/images/invalid-travel-distance-1.png)
-  ![Invalid Fuel Price 2](assets/images/invalid-travel-distance-2.png)
-  ![Invalid Fuel Price 3](assets/images/invalid-travel-distance-3.png)
-  ![Invalid Fuel Price 4]( 1assets/images/invalid-travel-distance-4.png)
+  ![Invalid Fuel Price 1](assets/images/invalid-fuel-price-1.png)
+  ![Invalid Fuel Price 2](assets/images/invalid-fuel-price-2.png)
+  ![Invalid Fuel Price 3](assets/images/invalid-fuel-price-3.png)
+  ![Invalid Fuel Price 4](assets/images/invalid-fuel-price-4.png)
   ![Invalid Fuel Price 5](assets/images/invalid-fuel-price-5.png)
 
 - Travel Distance input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
 
-  ![Invalid Travel Distance 1](assets/images/invalid-fuel-price-1.png)
-  ![Invalid Travel Distance 2](assets/images/invalid-fuel-price-2.png)
-  ![Invalid Travel Distance 3](assets/images/invalid-fuel-price-3.png)
-  ![Invalid Travel Distance 4](assets/images/invalid-fuel-price-4.png)
+  ![Invalid Travel Distance 1](assets/images/invalid-travel-distance-1.png)
+  ![Invalid Travel Distance 2](assets/images/invalid-travel-distance-2.png)
+  ![Invalid Travel Distance 3](assets/images/invalid-travel-distance-3.png)
+  ![Invalid Travel Distance 4](assets/images/invalid-travel-distance-4.png)
 
 - MPG input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
