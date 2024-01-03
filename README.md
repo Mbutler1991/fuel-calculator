@@ -61,3 +61,15 @@ Flowchart was created with Canva and some changes have been made since this stag
 - It also shows a table using tabulate with the data you inputted and the cost of the journey
 - Information here is stored in worksheet in google sheets
 - Colours are made using termcolor
+
+-__Worksheet__
+
+- This is the worksheet where the data is stored
+- The user input data is stored in the first three columns
+- The result of the program is stored in the fourth column
+- This is connected using Google Cloud service and the Google Drive API and Google Sheets API
+- Installed Gspread and Google-Auth python libraries to make this possible
+
+## Future Implementations
+
+I would like to add in features for travelling between countries, this way I could factor it to work based off different currencies, price formats, and measurements ie miles instead of kilometers and that the program would handle all the conversions so you could always see a result in your home currency. I also would like to allow for multinational trips so you would be able to work out multiple different measurements to work out a journey that uses multiple different currencies and multiple different prices at multiple different filling stations and return a more accurate estimate of total journey cost.
