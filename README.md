@@ -75,3 +75,20 @@ Flowchart was created with Canva and some changes have been made since this stag
 I would like to add in features for travelling between countries, this way I could factor it to work based off different currencies, price formats, and measurements ie miles instead of kilometers and that the program would handle all the conversions so you could always see a result in your home currency. I also would like to allow for multinational trips so you would be able to work out multiple different measurements to work out a journey that uses multiple different currencies and multiple different prices at multiple different filling stations and return a more accurate estimate of total journey cost. I would also like to add in features to recall data from the worksheet to work out average costs of fuel and journeys.
 
 ## Technology
+
+- This program was coded with Python
+- HTML, CSS and JavaScript were used in Code Institute Template
+- Pyfiglet Library was used to add style to the title
+- Termcolor was used to add colours to print statements in the terminal for added user experience
+- Gspread and Google-Auth were used to integrate the fuel_calculator worksheet to store and access user inputs and results
+- Canva was used to create was used to create flowchart at design stage
+- Git was used for version control
+- Github was used to store repository
+- Heroku was used to deploy the project
+- VS Code was used for all code
+
+## Testing 
+
+-__Manual Testing__
+
+- invalid/blank input
