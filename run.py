@@ -147,6 +147,7 @@ while True:
             main()
         elif repeat.upper() == 'N':
             print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
+            exit()
         else:
             raise ValueError("Invalid input. Please enter a y or n.")
     except ValueError:
