@@ -84,6 +84,7 @@ I would like to add in features for travelling between countries, this way I cou
 - HTML, CSS and JavaScript were used in Code Institute Template
 - Pyfiglet Library was used to add style to the title
 - Termcolor was used to add colours to print statements in the terminal for added user experience
+- Tabulate was used to display data in the end in table form.
 - Gspread and Google-Auth were used to integrate the fuel_calculator worksheet to store and access user inputs and results
 - Canva was used to create was used to create flowchart at design stage
 - Git was used for version control
@@ -149,4 +150,20 @@ The GitHub repository can be found at - (https://github.com/Mbutler1991/fuel-cal
 
 The live link can be found here - (https://fuelcost-calculator-943cd1e29a41.herokuapp.com/)
 
+## Credits
 
+### Maths
+
+The maths used in the app are the formulae for converting Miles per Gallon(MPG) to Kilometres per Litre(K/L), working out how much litres used by dividing travel distance by K/L, working out cost in cents by multiplying litres used by fuel price, then converting to euros by multiplying by 100 and rounding to two decimal spaces.
+
+### Libraries
+
+Libraries used were Termcolor, Pyfiglet, Tabulate, os, gspread, google-auth.
+
+### Code
+
+All code in this website is my own to the best of my knowledge, under the guidance of my mentor Lauren-Nicole Popich.
+
+## Thanks
+
+I would like to give recognition to my fantastic mentor Lauren-Nicole Popich for her help with and guidance on this project, to Laura Mayock for her informative lessons and assistance with any questions even though she is extremely busy and to my life partner Nikita Ellison for keeping me grounded, advising me to step away when needed, and ensuring I took care of myself as I got lost in the code.
