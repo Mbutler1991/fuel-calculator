@@ -1,5 +1,7 @@
 # Fuel Cost Calculator
 
+![Am I Responsive](assets/images/am-i-responsive.png)
+
 This project was made using Python, Google Sheets, Google Cloud Services and Google Drive API. and it is used to get an estimate of how much petrol or diesel you need for a journey
 
 This application is aimed at anybody that drives a car as it can be used with MPG for any vehicle it can get an estimate of price for any vehicle and any journey.
@@ -19,7 +21,7 @@ I would ideally like to introduce this to motorists by word of mouth and a targe
 
 Flowchart was created with Canva and some changes have been made since this stage.
 
-![Wireframe](https://github.com/Mbutler1991/Koh-iNoor/blob/master/assets/Screenshots/wireframe.png) 
+![Flowchart](assets/images/flowchart.png) 
 
 ## Data Storage
 
@@ -32,10 +34,14 @@ __First screen__
 - This is the first screen that shows up
 - It features a title, a welcome message and the first question
 
+![First Screen](assets/images/first-screen.png)
+
 __Title__
 
 - This is the first screen that shows up
 - The title is designed using pyfiglet
+
+![Title](assets/images/title.png)
 
 __Fuel Price__
 
@@ -44,6 +50,8 @@ __Fuel Price__
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
+![Fuel Price](assets/images/fuel-price-input.png)
+
 __Travel Distance__
 
 - This is the first question
@@ -51,12 +59,16 @@ __Travel Distance__
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
+![Travel Distance](assets/images/travel-distance-input.png)
+
 __MPG__
 
 - This is the third and final question
 - It asks for the average MPG of your vehicle and has an area for user input
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
+
+![MPG](assets/images/mpg-input.png)
 
 __Results__
 
@@ -66,6 +78,8 @@ __Results__
 - Information here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
+![Results](assets/images/results.png)
+
 __Worksheet__
 
 - This is the worksheet where the data is stored
@@ -73,6 +87,8 @@ __Worksheet__
 - The result of the program is stored in the fourth column
 - This is connected using Google Cloud service and the Google Drive API and Google Sheets API
 - Installed Gspread and Google-Auth python libraries to make this possible
+
+![Worksheet](assets/images/worksheet.png)
 
 ## Future Implementations
 
@@ -98,23 +114,45 @@ __Manual Testing__
 
 - Fuel Price input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+  
+  ![Invalid Fuel Price 1](assets/images/invalid-fuel-price-1.png)
+  ![Invalid Fuel Price 2](assets/images/invalid-fuel-price-2.png)
+  ![Invalid Fuel Price 3](assets/images/invalid-fuel-price-3.png)
+  ![Invalid Fuel Price 4](assets/images/invalid-fuel-price-4.png)
+  ![Invalid Fuel Price 5](assets/images/invalid-fuel-price-5.png)
 
 - Travel Distance input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
 
+  ![Invalid Travel Distance 1](assets/images/invalid-travel-distance-1.png)
+  ![Invalid Travel Distance 2](assets/images/invalid-travel-distance-2.png)
+  ![Invalid Travel Distance 3](assets/images/invalid-travel-distance-3.png)
+  ![Invalid Travel Distance 4](assets/images/invalid-travel-distance-4.png)
+
 - MPG input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+  
+  ![Invalid MPG 1](assets/images/invalid-mpg-1.png)
+  ![Invalid MPG 2](assets/images/invalid-mpg-2.png)
+  ![Invalid MPG 3](assets/images/invalid-mpg-3.png)
 
 - Restart input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+  
+  ![Invalid Restart 1](assets/images/invalid-restart-1.png)
+  ![Invalid Restart 2](assets/images/invalid-restart-2.png)
 
 - Worksheet
   - Checked this field with multiple different entries to make sure data always stored in correct areas and no invalid input would be stored in the worksheet.
+  
+  ![Valid Worksheet](assets/images/correct-worksheet-values.png)
  
 __pycodestyle Testing__
 
 - I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so separated lines to rectify this.
 - All other tests showed no errors.
+
+![Pycodestyle](assets/images/pycodestyle.png)
 
 ## Deployment 
 
