@@ -91,4 +91,17 @@ I would like to add in features for travelling between countries, this way I cou
 
 -__Manual Testing__
 
-- invalid/blank input
+- Fuel Price input
+  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+
+- Travel Distance input
+  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+
+- MPG input
+  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+
+- Restart input
+  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+
+- Worksheet
+  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
