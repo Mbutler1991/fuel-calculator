@@ -137,8 +137,21 @@ title = pyfiglet.figlet_format("Fuel Cost Calculator")
 print(title)
 print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
 main()
-print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
+#print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
 
-print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
-main()
-print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
+while True:
+    try:
+        print(colored('Would you like to start over (y/n)?', 'cyan'))
+        repeat = input('y/n?')
+        if repeat.upper() == 'Y':
+            main()
+        elif repeat.upper() == 'N':
+            print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
+        else:
+            raise ValueError("Invalid input. Please enter a y or n.")
+    except ValueError:
+        print('Invalid input. Please enter y or n')
+
+#print(colored('Welcome to the fuel price calculator', 'red', attrs=['reverse']))
+#main()
+#print(colored('Thank you for choosing our fuel price calculator', 'red', 'on_white'))
