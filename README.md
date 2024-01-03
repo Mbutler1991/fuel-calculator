@@ -114,3 +114,39 @@ __pycodestyle Testing__
 
 - I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so seperated lines to rectify this.
 - All other tests showed no errors.
+
+## Deployment 
+
+- The app was pushed to GitHub pages. The steps to deploy are as follows:
+  - I created a repository using GitHub repositories and the CI template.
+  - I opened it in my preferred IDE (VS Code) to write the code.
+  - I added all commits through the git change tab and also used this tab for pulling and pushing to my master branch.
+ 
+The GitHub repository can be found at - (https://github.com/Mbutler1991/fuel-calculator)
+
+ - The deployment of the project was done using [Heroku](https://www.heroku.com/) through the following steps.
+    - Log in to Heroku or create an account if necessary.
+    - Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
+    - Enter a unique name for the application and select the region you are in.
+    - Click on "create app".
+    - Navigate to the settings tab and locate the "Config Vars" section and click "Reveal config vars".
+    - Add a config var 
+      - In the "KEY" field enter "CREDS" in capital letters.
+      - In the "VALUE" field copy and paste the contents of your creds.json file and click "Add".
+    - Add another config var.
+      - In the "KEY" field enter PORT in all capital letters.
+      - In the "VALUE" field enter 8000 and click "Add".
+    - Scroll to the "Buildpacks" section and click "Add buildpack".
+    - Select Python and save changes.
+    - Add another buildpack and select Nodejs then save changes again.
+    - Ensure that the python buildpack is above the Nodejs buildpack.
+    - Navigate to the "Deploy" section by clicking the "Deploy" tab in the top navbar.
+    - Select "GitHub" as the deployment method and click "Connect to GitHub".
+    - Search for the GitHub repository name in the search bar.
+    - Click on "connect" to link the repository to Heroku.
+    - Scroll down and click on "Deploy Branch".
+    - Once the app is deployed, Heroku will notify you and provide a button to view the app.
+
+The live link can be found here - (https://fuelcost-calculator-943cd1e29a41.herokuapp.com/)
+
+
