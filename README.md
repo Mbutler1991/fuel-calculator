@@ -21,6 +21,10 @@ Flowchart was created with Canva and some changes have been made since this stag
 
 ![Wireframe](https://github.com/Mbutler1991/Koh-iNoor/blob/master/assets/Screenshots/wireframe.png) 
 
+## Data Storage
+
+The data for the application ie fuel price, travel distance, MPG and journey cost is stored in a google sheet. You can view the sheet [here](https://docs.google.com/spreadsheets/d/1pIAS9SkPGWzBjLZG3S6vO8TamaAEemttbZBdWit8Eck/edit?pli=1#gid=1680754323).
+
 ## Features 
 
 - __First__
