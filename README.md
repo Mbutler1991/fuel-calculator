@@ -1,12 +1,12 @@
 # Fuel Cost Calculator
 
-This project was made using Python, Google Sheets, Google Cloud Services and Google Drive api. and it is used to get an estimate of how much petrol or diesel you need for a journey
+This project was made using Python, Google Sheets, Google Cloud Services and Google Drive API. and it is used to get an estimate of how much petrol or diesel you need for a journey
 
 This application is aimed at anybody that drives a car as it can be used with MPG for any vehicle it can get an estimate of price for any vehicle and any journey.
 
 The aim is to help people manage their finances better when it comes to their travel costs and to help them with their budget.
 
-I would ideally like to introduce this to motorists by word of mouth and a targetted ad campaign.
+I would ideally like to introduce this to motorists by word of mouth and a targeted ad campaign.
 
 ## User Stories
 
@@ -76,7 +76,7 @@ __Worksheet__
 
 ## Future Implementations
 
-I would like to add in features for travelling between countries, this way I could factor it to work based off different currencies, price formats, and measurements ie miles instead of kilometers and that the program would handle all the conversions so you could always see a result in your home currency. I also would like to allow for multinational trips so you would be able to work out multiple different measurements to work out a journey that uses multiple different currencies and multiple different prices at multiple different filling stations and return a more accurate estimate of total journey cost. I would also like to add in features to recall data from the worksheet to work out average costs of fuel and journeys.
+I would like to add in features for travelling between countries, this way I could factor it to work based off different currencies, price formats, and measurements ie miles instead of kilometres and that the program would handle all the conversions so you could always see a result in your home currency. I also would like to allow for multinational trips so you would be able to work out multiple different measurements to work out a journey that uses multiple different currencies and multiple different prices at multiple different filling stations and return a more accurate estimate of total journey cost. I would also like to add in features to recall data from the worksheet to work out average costs of fuel and journeys.
 
 ## Technology
 
@@ -88,7 +88,7 @@ I would like to add in features for travelling between countries, this way I cou
 - Gspread and Google-Auth were used to integrate the fuel_calculator worksheet to store and access user inputs and results
 - Canva was used to create was used to create flowchart at design stage
 - Git was used for version control
-- Github was used to store repository
+- GitHub was used to store repository
 - Heroku was used to deploy the project
 - VS Code was used for all code
 
@@ -113,7 +113,7 @@ __Manual Testing__
  
 __pycodestyle Testing__
 
-- I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so seperated lines to rectify this.
+- I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so separated lines to rectify this.
 - All other tests showed no errors.
 
 ## Deployment 
@@ -126,11 +126,11 @@ __pycodestyle Testing__
 The GitHub repository can be found at - (https://github.com/Mbutler1991/fuel-calculator)
 
  - The deployment of the project was done using [Heroku](https://www.heroku.com/) through the following steps.
-    - Log in to Heroku or create an account if necessary.
-    - Click on the button labeled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
+    - Log in to Heroku.
+    - Click the button labelled "New" from the dashboard in the top right corner and select the "Create new app" option in the drop-down menu.
     - Enter a unique name for the application and select the region you are in.
-    - Click on "create app".
-    - Navigate to the settings tab and locate the "Config Vars" section and click "Reveal config vars".
+    - Click "create app".
+    - Navigate to the "Config Vars" section of the settings tab and click "Reveal config vars".
     - Add a config var 
       - In the "KEY" field enter "CREDS" in capital letters.
       - In the "VALUE" field copy and paste the contents of your creds.json file and click "Add".
@@ -141,7 +141,7 @@ The GitHub repository can be found at - (https://github.com/Mbutler1991/fuel-cal
     - Select Python and save changes.
     - Add another buildpack and select Nodejs then save changes again.
     - Ensure that the python buildpack is above the Nodejs buildpack.
-    - Navigate to the "Deploy" section by clicking the "Deploy" tab in the top navbar.
+    - Navigate to the "Deploy" section.
     - Select "GitHub" as the deployment method and click "Connect to GitHub".
     - Search for the GitHub repository name in the search bar.
     - Click on "connect" to link the repository to Heroku.
