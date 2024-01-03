@@ -1,6 +1,6 @@
 # Fuel Cost Calculator
 
-This project was ade using Python, Google Sheets, Google Cloud Services and Google Drive api. and it is sued to get an estimate of how much petrol or diesel you need for a journey
+This project was made using Python, Google Sheets, Google Cloud Services and Google Drive api. and it is used to get an estimate of how much petrol or diesel you need for a journey
 
 This application is aimed at anybody that drives a car as it can be used with MPG for any vehicle it can get an estimate of price for any vehicle and any journey.
 
@@ -27,38 +27,38 @@ The data for the application ie fuel price, travel distance, MPG and journey cos
 
 ## Features 
 
-- __First__
+__First screen__
 
 - This is the first screen that shows up
 - It features a title, a welcome message and the first question
 
-- __Title__
+__Title__
 
 - This is the first screen that shows up
 - The title is designed using pyfiglet
 
-- __Fuel Price__
+__Fuel Price__
 
 - This is the first question
 - It asks for your fuel price in cents and has an area for user input
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
-- __Travel Distance__
+__Travel Distance__
 
 - This is the first question
 - It asks for your travel distance in kilometres and has an area for user input
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
-- __MPG__
+__MPG__
 
 - This is the third and final question
 - It asks for the average MPG of your vehicle and has an area for user input
 - Information entered here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
-- __Results__
+__Results__
 
 - This is the results section
 - It shows you based off your input the estimated cost for the journey
@@ -66,7 +66,7 @@ The data for the application ie fuel price, travel distance, MPG and journey cos
 - Information here is stored in worksheet in google sheets
 - Colours are made using termcolor
 
--__Worksheet__
+__Worksheet__
 
 - This is the worksheet where the data is stored
 - The user input data is stored in the first three columns
@@ -93,7 +93,7 @@ I would like to add in features for travelling between countries, this way I cou
 
 ## Testing 
 
--__Manual Testing__
+__Manual Testing__
 
 - Fuel Price input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
@@ -108,4 +108,9 @@ I would like to add in features for travelling between countries, this way I cou
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
 
 - Worksheet
-  - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
+  - Checked this field with multiple different entries to make sure data always stored in correct areas and no invalid input would be stored in the worksheet.
+ 
+__pycodestyle Testing__
+
+- I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so seperated lines to rectify this.
+- All other tests showed no errors.
