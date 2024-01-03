@@ -116,30 +116,31 @@ __Manual Testing__
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
   
   ![Invalid Fuel Price](assets/images/invalid-travel-distance-1.png)
-  ![Invalid Fuel Price](assets/images/invalid-travel-distance-2.png)
-  ![Invalid Fuel Price](assets/images/invalid-travel-distance-3.png)
-  ![Invalid Fuel Price](assets/images/invalid-travel-distance-4.png)(assets/images/invalid-fuel-price-5.png)
+  ![Invalid Fuel Price 2](assets/images/invalid-travel-distance-2.png)
+  ![Invalid Fuel Price 3](assets/images/invalid-travel-distance-3.png)
+  ![Invalid Fuel Price 4]( 1assets/images/invalid-travel-distance-4.png)
+  ![Invalid Fuel Price 5](assets/images/invalid-fuel-price-5.png)
 
 - Travel Distance input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
 
-  ![Invalid Travel Distance](assets/images/invalid-fuel-price-1.png)
-  ![Invalid Travel Distance](assets/images/invalid-fuel-price-2.png)
-  ![Invalid Travel Distance](assets/images/invalid-fuel-price-3.png)
-  ![Invalid Travel Distance](assets/images/invalid-fuel-price-4.png)
+  ![Invalid Travel Distance 1](assets/images/invalid-fuel-price-1.png)
+  ![Invalid Travel Distance 2](assets/images/invalid-fuel-price-2.png)
+  ![Invalid Travel Distance 3](assets/images/invalid-fuel-price-3.png)
+  ![Invalid Travel Distance 4](assets/images/invalid-fuel-price-4.png)
 
 - MPG input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
   
-  ![Invalid MPG](assets/images/invalid-mpg-1.png)
-  ![Invalid MPG](assets/images/invalid-mpg-2.png)
-  ![Invalid MPG](assets/images/invalid-mpg-3.png)
+  ![Invalid MPG 1](assets/images/invalid-mpg-1.png)
+  ![Invalid MPG 2](assets/images/invalid-mpg-2.png)
+  ![Invalid MPG 3](assets/images/invalid-mpg-3.png)
 
 - Restart input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
   
-  ![Invalid Restart](assets/images/invalid-restart-1.png)
-  ![Invalid Restart](assets/images/invalid-restart-2.png)
+  ![Invalid Restart 1](assets/images/invalid-restart-1.png)
+  ![Invalid Restart 2](assets/images/invalid-restart-2.png)
 
 - Worksheet
   - Checked this field with multiple different entries to make sure data always stored in correct areas and no invalid input would be stored in the worksheet.
