@@ -114,28 +114,43 @@ __Manual Testing__
 
 - Fuel Price input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
-  ![Invalid Fuel Price](assets/images/invalid-travel-distance-1.png)(assets/images/invalid-travel-distance-2.png)(assets/images/invalid-travel-distance-3.png)(assets/images/invalid-travel-distance-4.png)(assets/images/invalid-fuel-price-5.png)
+  
+  ![Invalid Fuel Price](assets/images/invalid-travel-distance-1.png)
+  ![Invalid Fuel Price](assets/images/invalid-travel-distance-2.png)
+  ![Invalid Fuel Price](assets/images/invalid-travel-distance-3.png)
+  ![Invalid Fuel Price](assets/images/invalid-travel-distance-4.png)(assets/images/invalid-fuel-price-5.png)
 
 - Travel Distance input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
-   ![Invalid Travel Distance](assets/images/invalid-fuel-price-1.png)(assets/images/invalid-fuel-price-2.png)(assets/images/invalid-fuel-price-3.png)(assets/images/invalid-fuel-price-4.png)
+
+  ![Invalid Travel Distance](assets/images/invalid-fuel-price-1.png)
+  ![Invalid Travel Distance](assets/images/invalid-fuel-price-2.png)
+  ![Invalid Travel Distance](assets/images/invalid-fuel-price-3.png)
+  ![Invalid Travel Distance](assets/images/invalid-fuel-price-4.png)
 
 - MPG input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
-  ![Invalid MPG](assets/images/invalid-mpg-1.png)(assets/images/invalid-mpg-2.png)(assets/images/invalid-mpg-3.png)
+  
+  ![Invalid MPG](assets/images/invalid-mpg-1.png)
+  ![Invalid MPG](assets/images/invalid-mpg-2.png)
+  ![Invalid MPG](assets/images/invalid-mpg-3.png)
 
 - Restart input
   - Checked this field with multiple different invalid entries including blank space, string, out of range value, bool. Error raised every time and advised user of invalid input and requests input again.
-  ![Invalid Restart](assets/images/invalid-restart-1.png)(assets/images/invalid-restart-2.png)
+  
+  ![Invalid Restart](assets/images/invalid-restart-1.png)
+  ![Invalid Restart](assets/images/invalid-restart-2.png)
 
 - Worksheet
   - Checked this field with multiple different entries to make sure data always stored in correct areas and no invalid input would be stored in the worksheet.
+  
   ![Valid Worksheet](assets/images/correct-worksheet-values.png)
  
 __pycodestyle Testing__
 
 - I installed pycodestyle to the terminal for testing, initial tests showed some of my print statements to be too many characters and above the limit so separated lines to rectify this.
 - All other tests showed no errors.
+
 ![Pycodestyle](assets/images/pycodestyle.png)
 
 ## Deployment 
