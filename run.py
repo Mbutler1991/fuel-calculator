@@ -53,7 +53,7 @@ def get_float_input(prompt, min_value, max_value):
             else:
                 raise ValueError(
                     f"Invalid input. Please enter a valid number."
-                    )
+                                )
         except ValueError:
             print("Invalid input. Please enter a valid number.")
 
@@ -113,7 +113,7 @@ def calculate_cost(mpg, td, fp):
             rounded_cost_euro,
             'green',
             attrs=['reverse']
-            )
+                )
         )
     row = get_last_used_row(data, 4)
     data.update_cell(row, 4, rounded_cost_euro)
@@ -140,6 +140,31 @@ def display_results():
     print(table)
 
 
+def try_again():
+    '''
+    Function to check if user would like to try again, closes program if not
+    '''
+    while True:
+        try:
+            print(colored('Would you like to start over (y/n)?', 'cyan'))
+            repeat = input('y/n?')
+            if repeat.upper() == 'Y':
+                main()
+            elif repeat.upper() == 'N':
+                print(
+                    colored(
+                        'Thank you for choosing our fuel price calculator',
+                        'red',
+                        'on_white'
+                            )
+                    )
+                exit()
+            else:
+                raise ValueError("Invalid input. Please enter a y or n.")
+        except ValueError:
+            print('Invalid input. Please enter y or n')
+
+
 def main():
     '''
     main function to run the program
@@ -149,6 +174,7 @@ def main():
     mpg = miles_per_gallon()
     calculate_cost(mpg, td, fp)
     display_results()
+    try_again()
 
 
 title = pyfiglet.figlet_format("Fuel Cost Calculator")
@@ -158,26 +184,6 @@ print(
         'Welcome to the fuel price calculator',
         'red',
         attrs=['reverse']
-        )
-        )
+            )
+    )
 main()
-
-while True:
-    try:
-        print(colored('Would you like to start over (y/n)?', 'cyan'))
-        repeat = input('y/n?')
-        if repeat.upper() == 'Y':
-            main()
-        elif repeat.upper() == 'N':
-            print(
-                colored(
-                    'Thank you for choosing our fuel price calculator',
-                    'red',
-                    'on_white'
-                    )
-                )
-            exit()
-        else:
-            raise ValueError("Invalid input. Please enter a y or n.")
-    except ValueError:
-        print('Invalid input. Please enter y or n')
