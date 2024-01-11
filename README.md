@@ -147,7 +147,7 @@ __Manual Testing__
   
   ![Valid Worksheet](assets/images/correct-worksheet-values.png)
 
-__Physical Testing__
+__Real World Testing__
 
 I tested this app with physical testing also, I did this on long journeys, Clare to Athlone, Clare to Dublin and Clare to Belfast. I also did this on shorter journeys Clare to Limerick, Sixmilebridge to Shannon, Sixmilebridge to Ennis. I tested this by filling my tank up at one petrol station and then topping it up at another station, if the amount I had to top up by was close to the amount the app estimated I counted it as a success. I found that it is impossible to get it exactly right as we can only work off averages for the MPG and we cannot take into account such things as traffic, condition of the vehicle, driving speed, stopping and starting, weather, amount of passengers, amount of extra weight in the vehicle and all other external variables. The results were all accurate enough to display good estimates. The results were more accurate over shorter distances than longer distances but longer journeys still give a pretty good estimate. I also recruited 3 more drivers with different vehicles and tested it through them and had similar results.
  
@@ -157,6 +157,12 @@ __pycodestyle Testing__
 - All other tests showed no errors.
 
 ![Pycodestyle](assets/images/pycodestyle.png)
+
+__PEP8 Testing__
+
+- I ran my code through PEP8 CI Python Linter and no errors were found.
+
+![Pycodestyle](assets/images/pep8.png)
 
 ## Deployment 
 
